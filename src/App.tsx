@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider } from './lib/auth';
+import { AuthProvider, useAuth } from './lib/auth';
 import { CartProvider } from './lib/cart';
 import AgroNavbar from './agro/components/AgroNavbar';
 import AgroFooter from './agro/components/AgroFooter';
@@ -11,6 +11,7 @@ import AgroServicesPage from './agro/pages/AgroServicesPage';
 import AgroContactPage from './agro/pages/AgroContactPage';
 import AgroShopPage from './agro/pages/AgroShopPage';
 import AgroAcademyPage from './agro/pages/AgroAcademyPage';
+import AgroAuthPage from './agro/pages/AgroAuthPage';
 import WCNavbar from './worldcup/components/WCNavbar';
 import WCFooter from './worldcup/components/WCFooter';
 import WCHomePage from './worldcup/pages/WCHomePage';
@@ -19,7 +20,6 @@ import WCSeatSelectionPage from './worldcup/pages/WCSeatSelectionPage';
 import WCCheckoutPage from './worldcup/pages/WCCheckoutPage';
 import WCConfirmationPage from './worldcup/pages/WCConfirmationPage';
 import WCMyTicketsPage from './worldcup/pages/WCMyTicketsPage';
-import WCAuthPage from './worldcup/pages/WCAuthPage';
 import WCAdminPage from './worldcup/pages/WCAdminPage';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
@@ -39,8 +39,6 @@ function AdminRoute({ children }: { children: React.ReactNode }) {
   if (profile?.role !== 'admin') return <Navigate to="/" replace />;
   return <>{children}</>;
 }
-
-import { useAuth } from './lib/auth';
 
 function AgroLayout() {
   return (
@@ -86,7 +84,7 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/worldcup/*" element={<WCLayout />} />
-      <Route path="/auth" element={<WCAuthPage />} />
+      <Route path="/auth" element={<AgroAuthPage />} />
       <Route path="/*" element={<AgroLayout />} />
     </Routes>
   );
