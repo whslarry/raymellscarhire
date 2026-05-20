@@ -1,12 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, useAuth } from './lib/auth';
+import { AuthProvider } from './lib/auth';
+import { CartProvider } from './lib/cart';
 import AgroNavbar from './agro/components/AgroNavbar';
 import AgroFooter from './agro/components/AgroFooter';
+import CartDrawer from './agro/components/CartDrawer';
 import AgroHomePage from './agro/pages/AgroHomePage';
 import AgroAboutPage from './agro/pages/AgroAboutPage';
 import AgroServicesPage from './agro/pages/AgroServicesPage';
 import AgroContactPage from './agro/pages/AgroContactPage';
+import AgroShopPage from './agro/pages/AgroShopPage';
+import AgroAcademyPage from './agro/pages/AgroAcademyPage';
 import WCNavbar from './worldcup/components/WCNavbar';
 import WCFooter from './worldcup/components/WCFooter';
 import WCHomePage from './worldcup/pages/WCHomePage';
@@ -21,8 +25,8 @@ import WCAdminPage from './worldcup/pages/WCAdminPage';
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
   if (loading) return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-950">
-      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-400"></div>
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-900"></div>
     </div>
   );
   if (!user) return <Navigate to="/auth" replace />;
@@ -36,15 +40,20 @@ function AdminRoute({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
+import { useAuth } from './lib/auth';
+
 function AgroLayout() {
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       <AgroNavbar />
+      <CartDrawer />
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<AgroHomePage />} />
           <Route path="/about" element={<AgroAboutPage />} />
           <Route path="/services" element={<AgroServicesPage />} />
+          <Route path="/shop" element={<ProtectedRoute><AgroShopPage /></ProtectedRoute>} />
+          <Route path="/academy" element={<ProtectedRoute><AgroAcademyPage /></ProtectedRoute>} />
           <Route path="/contact" element={<AgroContactPage />} />
         </Routes>
       </main>
@@ -76,10 +85,8 @@ function WCLayout() {
 function AppRoutes() {
   return (
     <Routes>
-      {/* World Cup app at /worldcup */}
       <Route path="/worldcup/*" element={<WCLayout />} />
       <Route path="/auth" element={<WCAuthPage />} />
-      {/* AgroVista (default) */}
       <Route path="/*" element={<AgroLayout />} />
     </Routes>
   );
@@ -88,9 +95,11 @@ function AppRoutes() {
 function App() {
   return (
     <AuthProvider>
-      <Router>
-        <AppRoutes />
-      </Router>
+      <CartProvider>
+        <Router>
+          <AppRoutes />
+        </Router>
+      </CartProvider>
     </AuthProvider>
   );
 }

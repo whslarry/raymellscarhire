@@ -141,3 +141,43 @@ export type AgroContact = {
   message: string;
   created_at: string;
 };
+
+// ─── AgroVista Shop & Academy types ───
+
+export type AgroVegetable = {
+  id: string;
+  name: string;
+  slug: string;
+  category: string;
+  price_per_kg: number;
+  unit: string;
+  image_url: string;
+  description: string;
+  in_stock: boolean;
+  featured: boolean;
+  sort_order: number;
+};
+
+export type AgroEducation = {
+  id: string;
+  title: string;
+  slug: string;
+  type: 'video' | 'guide' | 'workshop';
+  description: string;
+  image_url: string;
+  duration: string;
+  download_url: string;
+  schedule_date: string | null;
+  schedule_location: string | null;
+  instructor: string;
+  featured: boolean;
+  sort_order: number;
+};
+
+export type AgroCartItem = {
+  id: string;
+  user_id: string;
+  vegetable_id: string;
+  quantity: number;
+  agro_vegetables?: AgroVegetable;
+};
