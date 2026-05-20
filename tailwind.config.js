@@ -2,7 +2,51 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        forest: {
+          50: '#F0F7F0',
+          100: '#D9EDD9',
+          200: '#B3DBB3',
+          300: '#7DC27D',
+          400: '#4FA64F',
+          500: '#2E7D32',
+          600: '#256625',
+          700: '#1B4D1B',
+          800: '#133613',
+          900: '#0A1F0A',
+          950: '#050F05',
+        },
+        soil: {
+          50: '#FDF8F0',
+          100: '#F8ECD5',
+          200: '#F0D5A0',
+          300: '#E4B86A',
+          400: '#D4974A',
+          500: '#B87333',
+          600: '#8B5A2B',
+          700: '#6B4423',
+          800: '#4A3018',
+          900: '#2D1D0E',
+        },
+        sun: {
+          50: '#FFFBEB',
+          100: '#FEF3C7',
+          200: '#FDE68A',
+          300: '#FCD34D',
+          400: '#FBBF24',
+          500: '#F59E0B',
+          600: '#D97706',
+          700: '#B45309',
+          800: '#92400E',
+          900: '#78350F',
+        },
+      },
+      fontFamily: {
+        display: ['Georgia', 'Cambria', 'serif'],
+        body: ['system-ui', '-apple-system', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };

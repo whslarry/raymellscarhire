@@ -5,6 +5,8 @@ const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
+// ─── World Cup types ───
+
 export type Profile = {
   id: string;
   full_name: string;
@@ -92,4 +94,50 @@ export type BookingItem = {
   price_paid: number;
   wc_seats?: Seat;
   wc_seat_zones?: SeatZone;
+};
+
+// ─── AgroVista types ───
+
+export type AgroProduct = {
+  id: string;
+  name: string;
+  category: string;
+  price: number;
+  unit: string;
+  description: string;
+  image_url: string;
+  features: string[];
+  featured: boolean;
+};
+
+export type AgroTestimonial = {
+  id: string;
+  name: string;
+  role: string;
+  company: string;
+  quote: string;
+  rating: number;
+  image_url: string;
+  featured: boolean;
+};
+
+export type AgroBlogPost = {
+  id: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  category: string;
+  image_url: string;
+  author: string;
+  published_at: string;
+  featured: boolean;
+};
+
+export type AgroContact = {
+  id: string;
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  created_at: string;
 };

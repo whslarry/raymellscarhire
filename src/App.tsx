@@ -1,6 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './lib/auth';
+import AgroNavbar from './agro/components/AgroNavbar';
+import AgroFooter from './agro/components/AgroFooter';
+import AgroHomePage from './agro/pages/AgroHomePage';
+import AgroAboutPage from './agro/pages/AgroAboutPage';
+import AgroServicesPage from './agro/pages/AgroServicesPage';
+import AgroContactPage from './agro/pages/AgroContactPage';
 import WCNavbar from './worldcup/components/WCNavbar';
 import WCFooter from './worldcup/components/WCFooter';
 import WCHomePage from './worldcup/pages/WCHomePage';
@@ -30,7 +36,24 @@ function AdminRoute({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
-function AppRoutes() {
+function AgroLayout() {
+  return (
+    <div className="min-h-screen bg-white flex flex-col">
+      <AgroNavbar />
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<AgroHomePage />} />
+          <Route path="/about" element={<AgroAboutPage />} />
+          <Route path="/services" element={<AgroServicesPage />} />
+          <Route path="/contact" element={<AgroContactPage />} />
+        </Routes>
+      </main>
+      <AgroFooter />
+    </div>
+  );
+}
+
+function WCLayout() {
   return (
     <div className="min-h-screen bg-gray-950 flex flex-col">
       <WCNavbar />
@@ -42,12 +65,23 @@ function AppRoutes() {
           <Route path="/checkout" element={<ProtectedRoute><WCCheckoutPage /></ProtectedRoute>} />
           <Route path="/confirmation/:bookingId" element={<ProtectedRoute><WCConfirmationPage /></ProtectedRoute>} />
           <Route path="/my-tickets" element={<ProtectedRoute><WCMyTicketsPage /></ProtectedRoute>} />
-          <Route path="/auth" element={<WCAuthPage />} />
           <Route path="/admin" element={<ProtectedRoute><AdminRoute><WCAdminPage /></AdminRoute></ProtectedRoute>} />
         </Routes>
       </main>
       <WCFooter />
     </div>
+  );
+}
+
+function AppRoutes() {
+  return (
+    <Routes>
+      {/* World Cup app at /worldcup */}
+      <Route path="/worldcup/*" element={<WCLayout />} />
+      <Route path="/auth" element={<WCAuthPage />} />
+      {/* AgroVista (default) */}
+      <Route path="/*" element={<AgroLayout />} />
+    </Routes>
   );
 }
 
