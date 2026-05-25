@@ -96,7 +96,7 @@ export type BookingItem = {
   wc_seat_zones?: SeatZone;
 };
 
-// ─── AgroVista types ───
+// ─── Larry Farm types ───
 
 export type AgroProduct = {
   id: string;
@@ -142,7 +142,7 @@ export type AgroContact = {
   created_at: string;
 };
 
-// ─── AgroVista Shop & Academy types ───
+// ─── Larry Farm Shop & Academy types ───
 
 export type AgroVegetable = {
   id: string;

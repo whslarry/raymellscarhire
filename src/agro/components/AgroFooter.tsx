@@ -87,8 +87,8 @@ export default function AgroFooter() {
                 <Leaf className="h-5 w-5 text-white" />
               </div>
               <div>
-                <span className="text-white font-bold text-lg block leading-none">AgroVista</span>
-                <span className="text-emerald-400 text-[10px] font-bold uppercase tracking-[0.25em]">Farm & Market</span>
+                <span className="text-white font-bold text-lg block leading-none">Larry Farm</span>
+                <span className="text-emerald-400 text-[10px] font-bold uppercase tracking-[0.25em]">Fresh & Local</span>
               </div>
             </Link>
             <p className="text-emerald-300/70 text-sm leading-relaxed mb-6">
@@ -105,7 +105,7 @@ export default function AgroFooter() {
               </div>
               <div className="flex items-center gap-2.5 group">
                 <Mail className="h-4 w-4 text-emerald-600 flex-shrink-0" />
-                <a href="mailto:hello@agrovista.farm" className="hover:text-white transition-colors">hello@agrovista.farm</a>
+                <a href="mailto:hello@larryfarm.com" className="hover:text-white transition-colors">hello@larryfarm.com</a>
               </div>
             </div>
           </div>
@@ -182,7 +182,7 @@ export default function AgroFooter() {
       <div className="border-t border-emerald-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-emerald-700 text-xs">
-            &copy; {new Date().getFullYear()} AgroVista Farm & Market. All rights reserved.
+            &copy; {new Date().getFullYear()} Larry Farm Fresh & Local. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-emerald-700 text-xs">
             <span className="hover:text-emerald-400 cursor-pointer transition-colors">Privacy</span>

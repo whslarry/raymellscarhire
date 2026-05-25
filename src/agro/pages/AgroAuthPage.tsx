@@ -63,7 +63,7 @@ export default function AgroAuthPage() {
               <Leaf className="h-6 w-6 text-white" />
             </div>
             <div className="text-left">
-              <p className="text-emerald-900 font-bold text-xl tracking-tight">AgroVista</p>
+              <p className="text-emerald-900 font-bold text-xl tracking-tight">Larry Farm</p>
               <p className="text-emerald-900/50 text-xs font-bold tracking-widest">FARM & MARKET</p>
             </div>
           </Link>
@@ -75,7 +75,7 @@ export default function AgroAuthPage() {
             {mode === 'signin' ? 'Welcome Back' : 'Create Account'}
           </h2>
           <p className="text-gray-500 text-sm text-center mb-8">
-            {mode === 'signin' ? 'Sign in to shop fresh produce and access the academy.' : 'Join AgroVista to start shopping and learning.'}
+            {mode === 'signin' ? 'Sign in to shop fresh produce and access the academy.' : 'Join Larry Farm to start shopping and learning.'}
           </p>
 
           {/* Tabs */}

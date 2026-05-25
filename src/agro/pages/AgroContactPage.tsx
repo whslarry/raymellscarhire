@@ -7,7 +7,7 @@ import { useScrollReveal } from '../../lib/useScrollReveal';
 const contactInfo = [
   { icon: MapPin, label: 'Address', value: 'Rural Route 12, Green Valley, CA 90210', href: '#', color: 'bg-forest-50 text-forest-600' },
   { icon: Phone, label: 'Phone', value: '+1 (555) 123-4567', href: 'tel:+15551234567', color: 'bg-blue-50 text-blue-600' },
-  { icon: Mail, label: 'Email', value: 'hello@agrovista.farm', href: 'mailto:hello@agrovista.farm', color: 'bg-sun-50 text-sun-600' },
+  { icon: Mail, label: 'Email', value: 'hello@larryfarm.com', href: 'mailto:hello@larryfarm.com', color: 'bg-sun-50 text-sun-600' },
   { icon: Clock, label: 'Hours', value: 'Mon-Fri 8AM-6PM, Sat 9AM-4PM', href: '#', color: 'bg-soil-50 text-soil-600' },
 ];
 

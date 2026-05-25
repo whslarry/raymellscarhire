@@ -418,7 +418,7 @@ export default function AgroHomePage() {
                 Fresh Food, Thriving Farms
               </h2>
               <p className="text-emerald-200/80 text-lg leading-relaxed mb-8">
-                Whether you are filling your kitchen with organic produce or filling your fields with knowledge, AgroVista is your partner.
+                Whether you are filling your kitchen with organic produce or filling your fields with knowledge, Larry Farm is your partner.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/shop" className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-white hover:text-emerald-950 font-bold px-8 py-4 rounded-xl transition-all duration-300 group">

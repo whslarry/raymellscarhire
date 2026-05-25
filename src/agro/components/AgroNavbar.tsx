@@ -54,13 +54,13 @@ export default function AgroNavbar() {
         {/* Main nav */}
         <div className="flex items-center justify-between h-16 lg:h-[72px]">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group" aria-label="AgroVista Home">
+          <Link to="/" className="flex items-center gap-2.5 group" aria-label="Larry Farm Home">
             <div className="w-10 h-10 bg-emerald-900 rounded-xl flex items-center justify-center group-hover:shadow-lg group-hover:shadow-emerald-900/20 transition-all duration-300 group-hover:scale-105">
               <Leaf className="h-5 w-5 text-white" />
             </div>
             <div>
-              <span className="text-emerald-900 font-bold text-lg leading-none block">AgroVista</span>
-              <span className="text-emerald-900/50 text-[10px] font-bold uppercase tracking-[0.25em] leading-none">Farm & Market</span>
+              <span className="text-emerald-900 font-bold text-lg leading-none block">Larry Farm</span>
+              <span className="text-emerald-900/50 text-[10px] font-bold uppercase tracking-[0.25em] leading-none">Fresh & Local</span>
             </div>
           </Link>
 

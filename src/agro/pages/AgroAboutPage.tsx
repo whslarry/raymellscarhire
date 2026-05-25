@@ -73,7 +73,7 @@ export default function AgroAboutPage() {
                 Regenerating Land, Nourishing Communities
               </h2>
               <p className="text-gray-600 leading-relaxed mb-6">
-                AgroVista was born from the conviction that agriculture does not have to choose between productivity and sustainability. Our regenerative methods increase yields while restoring soil health, sequestering carbon, and conserving water.
+                Larry Farm was born from the conviction that agriculture does not have to choose between productivity and sustainability. Our regenerative methods increase yields while restoring soil health, sequestering carbon, and conserving water.
               </p>
               <p className="text-gray-600 leading-relaxed mb-8">
                 We work with a network of 340+ partner farms, providing them with the resources, technology, and market access they need to transition to sustainable practices — while ensuring buyers receive premium, fully traceable products.
@@ -164,7 +164,7 @@ export default function AgroAboutPage() {
         <div className="container-wide">
           <div className="text-center mb-14 reveal">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-forest-900 mb-3">Meet the Team</h2>
-            <p className="text-gray-500 max-w-xl mx-auto">The people behind AgroVista who make sustainable agriculture a reality every day.</p>
+            <p className="text-gray-500 max-w-xl mx-auto">The people behind Larry Farm who make sustainable agriculture a reality every day.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 stagger-children">
             {team.map((member) => (
